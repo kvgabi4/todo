@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap');
+
+
+:root {
+    --element-margin: 1.5rem;
+}
+html {
+    background-image: linear-gradient(180deg, rgb(252, 98, 87), rgb(253, 121, 121));
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    align-items: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.daily-todo-list {
+    align-items: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+h3 {
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    margin: 2rem;
+    text-align: center;
+}
+
+.main__container {
+    /* align-items: center; */
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: .2rem;
+    background-color: rgb(240,240,245);
+    color: rgb(100,100,100);
+    display: flex;
+    flex-flow: column wrap;
+    /* justify-content: center; */
+    min-height: 28rem;
+    width: 28rem;
+}
+
+.date__container {
+    margin: 3rem 0 2rem 1.5rem;
+}
+
+.day, .date {
+    color:  rgb(252, 98, 87);
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.input-todo__container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: var(--element-margin);
+}
+
+.input-todo {
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: .2rem;
+    font-size: 1rem;
+    height: 2.5rem;
+    padding: 1rem;
+    width: 20rem;
+}
+
+::placeholder {
+    color:  rgb(180, 180, 180);
+    font-style: italic;
+}
+
+.plus {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(209, 209, 209);
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: .2rem;
+    color: rgb(255,255,255);
+    cursor: pointer;
+    font-size: 1.7rem;
+    font-weight: 800;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    /* padding-bottom: .25rem; */
+    width: 4rem;
+}
+
+.plus:hover {
+    background-color: rgb(61, 27, 252);
+}
+
+.todo-list__container, .completed-list__container {
+    margin: var(--element-margin);
+}
+
+.task {
+    align-items: center;
+    animation-name: move;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in-out;
+    background-color: rgb(220, 225, 238);
+    border-radius: .2rem;
+    display: flex;
+    height: 3rem;
+    line-height: 2.5rem;
+    margin-bottom: .5rem;
+}
+
+@keyframes move {
+    from {margin-left: 80%; opacity: .1}
+    to {margin-left: 0%; opacity: 1}
+}
+
+.checkbox {
+    border: 1px solid rgb(199, 199, 199);
+    height: 1.3rem;
+    margin: .7rem;
+    width: 1.3rem;
+}
+
+.task-text {
+    text-align: left;
+}
+
+.completed-list__container>.task {
+    background-color: rgb(255, 255, 255);
+}
+
+.completed-list__container>.task>.task-text {
+    color:  rgb(180, 180, 180);
+    text-decoration: line-through;
+}
+
+.todo-list__container>p, .completed-list__container>p {
+    margin-bottom: 1rem;
+}
+
+.fa.fa-trash-o {
+    display: none;
+    width: 0;
+    opacity: 0;
+}
+
+.task:hover .fa.fa-trash-o {
+    animation-name: movetrash;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in-out;
+    display: inline;
+    background-color:  rgb(252, 98, 87);
+    border: none;
+    border-radius: 0 .2rem .2rem 0;
+    color: rgb(255, 255, 255);
+    margin-left: auto;
+    font-size: 1.3rem;
+    height: 3rem;
+    line-height: 3rem;
+    opacity: 1;
+    text-align: center;
+    padding: 0 1rem;
+    width: 3.5rem;
+}
+
+@keyframes movetrash {
+    from {margin-right: 0%; opacity: .1; width: 1rem;}
+    to {margin-right: 0%; opacity: 1; width: 3.5rem}
+}
+
+.button__container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.show-hide, .clearAll, .chill {
+    margin: 1rem;
+    background-color: none;
+    border: none;
+    color: rgb(100,100,100);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.toasting__container {
+    align-items: center;
+    animation-name: move-toasting;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 25rem;
+}
+
+@keyframes move-toasting {
+    from {margin-top: 40%; opacity: .1}
+    to {margin-top: 0%; opacity: 1}
+}
+
+.toasting {
+    font-size: 3rem;
+}
+
+.hide {
+    display: none;
+}
